@@ -1,0 +1,40 @@
+{
+  "name": "elp-crud",
+  "version": "0.0.0",
+  "files": [
+    "lib"
+  ],
+  "main": "./lib/elp-crud.umd.js",
+  "module": "./lib/elp-crud.es.js",
+  "exports": {
+    ".": {
+      "import": "./lib/elp-crud.es.js",
+      "require": "./lib/elp-crud.umd.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:check": "vue-tsc --noEmit && vite build",
+    "build:doc": "typedoc",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "dayjs": "^1.10.5",
+    "element-plus": "1.0.2-beta.54",
+    "lodash": "^4.17.21",
+    "vue": "3.1.4"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.170",
+    "@types/node": "^16.0.0",
+    "@vitejs/plugin-vue": "^1.2.4",
+    "@vue/compiler-sfc": "^3.1.4",
+    "sass": "^1.35.1",
+    "sass-loader": "^12.1.0",
+    "typedoc": "^0.21.2",
+    "typescript": "^4.3.5",
+    "vite": "^2.4.0",
+    "vue-tsc": "^0.2.0"
+  }
+}
