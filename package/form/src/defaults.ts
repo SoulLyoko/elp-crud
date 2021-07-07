@@ -1,9 +1,9 @@
 import { PropType } from "vue";
+import { tupleArray } from "~/utils";
 import { TableOption } from "~/table/src/types";
-import { FormOption } from "./types";
+import { FormColumnOption, FormOption } from "./types";
 
-export const FORM_OPTION: FormOption = {
-  column: [],
+export const FORM_OPTION: Partial<FormOption> = {
   formMenu: true,
   menuPosition: "center",
   menuSpan: 24,
@@ -17,7 +17,7 @@ export const FORM_OPTION: FormOption = {
   submitBtnText: "提交"
 };
 
-export const FORM_COLUMN_OPTION = {
+export const FORM_COLUMN_OPTION: Partial<FormColumnOption> = {
   span: 12
 };
 
@@ -26,4 +26,4 @@ export const FORM_PROPS = {
   option: { type: Object as PropType<FormOption & TableOption>, default: () => ({}) }
 };
 
-export const FORM_EMITS = ["update:modelValue", "submit", "reset"];
+export const FORM_EMITS = tupleArray("update:modelValue", "submit", "reset");

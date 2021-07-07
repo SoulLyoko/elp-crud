@@ -1,3 +1,1 @@
-import Form from "./src/form.vue";
-
-export default Form;
+export { default as ElpForm } from "./src/form.vue";

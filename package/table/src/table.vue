@@ -86,12 +86,13 @@
 
 <script lang="ts">
 import { defineProps, defineEmits, provide, defineComponent } from "vue";
-import ElpForm from "~/form";
+import { ElpForm } from "~/form";
 import { useDict } from "~/dict";
 import { useRender, useSearch, useTable } from "./use";
 import { TABLE_PROPS, TABLE_EMITS } from "./defaults";
 
 export default defineComponent({
+  name: "elp-table",
   component: { ElpForm },
   props: TABLE_PROPS,
   emits: TABLE_EMITS,
@@ -104,7 +105,6 @@ export default defineComponent({
       formData,
       modalTitle,
       modalVisible,
-      elpFormRef,
       rowAdd,
       rowEdit,
       rowView,
@@ -132,7 +132,6 @@ export default defineComponent({
       formData,
       modalTitle,
       modalVisible,
-      elpFormRef,
       rowAdd,
       rowEdit,
       rowView,
@@ -164,7 +163,6 @@ export default defineComponent({
 //   formData,
 //   modalTitle,
 //   modalVisible,
-//   elpFormRef,
 //   rowAdd,
 //   rowEdit,
 //   rowView,

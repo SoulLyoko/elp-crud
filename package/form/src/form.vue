@@ -104,7 +104,8 @@
 import { defineProps, defineEmits, inject, defineComponent } from "vue";
 import { ElForm, ElFormItem } from "element-plus";
 import { useDict } from "~/dict";
-import { useForm, useRender } from "./use";
+import { useForm } from "./use/form";
+import { useRender } from "./use/render";
 import { FORM_PROPS, FORM_EMITS } from "./defaults";
 
 export default defineComponent({
@@ -146,12 +147,12 @@ export default defineComponent({
  * setup sugar
  */
 // const props = defineProps(FORM_PROPS);
-// const emits = defineEmits(FORM_EMITS);
+// const emit = defineEmits(FORM_EMITS);
 
 // const dictStorageInject = inject<any>("dictStorage");
 // const dict = useDict(dictStorageInject);
 // const { formItemCompnentName, formItemComponentAttrs, formItemRadioCheckbox } = useRender(dict);
-// const { formRef, formOption, formData, handleSubmit, handleReset, submitLoading } = useForm({ props, emits, dict });
+// const { elFormRef, formOption, formData, handleSubmit, handleReset, submitLoading } = useForm({ props, emit, dict });
 
 // const { getDictStorage, setDictStorage } = dict;
 // const getDict = getDictStorage;

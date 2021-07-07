@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import { getDictLabel, useDict } from "~/dict";
-import { FormColumnOption } from "~/elp-crud";
+import { FormColumnOption } from "~/form/src/types";
 import { DATE_FORMAT } from "../defaults";
 
 export function useRender(dict: ReturnType<typeof useDict>) {

@@ -21,6 +21,7 @@
 
 <script lang="ts" setup>
 import { computed, ref, watch, onMounted } from "vue";
+import { defineOption } from "../lib";
 
 const dictData = new Promise(resolve => {
   const data = [
@@ -94,7 +95,7 @@ const tableData = [
   }
 ];
 const tableOption = computed(() => {
-  return {
+  return defineOption({
     viewBtn: true,
     column: [
       {
@@ -105,8 +106,7 @@ const tableOption = computed(() => {
         button: true,
         // hide: true,
         // addDisplay: false,
-        dictData,
-        value: "1"
+        dictData
       },
       {
         label: "多选框",
@@ -140,7 +140,7 @@ const tableOption = computed(() => {
       },
       { label: "自定义插槽", prop: "slot" }
     ]
-  };
+  });
 });
 const handleDel = (row: any) => {
   console.log("🚀 ~ file: App.vue ~ line 17 ~ handleDel ~ row", row);

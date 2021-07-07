@@ -3,8 +3,8 @@ import { ElTable, ElTableColumn } from "element-plus";
 import { FormColumnOption, FormOption } from "~/form/src/types";
 import { TABLE_PROPS, TABLE_EMITS } from "./defaults";
 
-export type ElTableProps = InstanceType<typeof ElTable>["$props"];
-export type ElTableColumnProps = InstanceType<typeof ElTableColumn>["$props"];
+type ElTableProps = InstanceType<typeof ElTable>["$props"];
+type ElTableColumnProps = InstanceType<typeof ElTableColumn>["$props"];
 type TableAndForm = ElTableProps & FormOption;
 type TableAndFormColumn = ElTableColumnProps & FormColumnOption;
 
@@ -195,7 +195,5 @@ export interface TableColumnOption extends TableAndFormColumn {
   [x: string]: any;
 }
 
-const props = defineProps(TABLE_PROPS);
-const emits = defineEmits(TABLE_EMITS);
-export type TableProps = typeof props;
-export type TableEmits = typeof emits;
+export const tableProps = defineProps(TABLE_PROPS);
+export const tableEmits = defineEmits(TABLE_EMITS);

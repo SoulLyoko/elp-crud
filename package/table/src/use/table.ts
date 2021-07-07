@@ -1,17 +1,17 @@
 import { cloneDeep } from "lodash";
 import { computed, nextTick, ref } from "vue";
 import { useDict } from "~/dict/src";
-import { TableOption } from "~/elp-crud";
+import { TableOption } from "../types";
 import { TABLE_OPTION, TABLE_COLUMN_OPTION } from "../defaults";
-import { TableProps, TableEmits } from "../types";
+import { tableProps, tableEmits } from "../types";
 
 export function useTable({
   props,
   emit,
   dict
 }: {
-  props: TableProps;
-  emit: TableEmits;
+  props: typeof tableProps;
+  emit: typeof tableEmits;
   dict: ReturnType<typeof useDict>;
 }) {
   const { getDictStorage, handleDictData } = dict;
@@ -67,7 +67,6 @@ export function useTable({
     return option as TableOption;
   });
 
-  const elpFormRef = ref();
   const modalVisible = ref(false);
   const formType = ref<"add" | "edit" | "view">("add");
   const modalTitle = computed<string>(() => {
@@ -142,7 +141,6 @@ export function useTable({
   }
 
   return {
-    elpFormRef,
     tableOption,
     formOption,
     formData,

@@ -14,7 +14,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, "package/index.ts"),
-      name: "elp-crud"
+      name: "ElpCrud",
+      fileName: "index"
     },
     outDir: "lib"
   }

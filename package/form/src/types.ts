@@ -190,9 +190,5 @@ export interface FormColumnOption extends ElFormItemProps {
   type?: FormItemType;
 }
 
-export type ElFormContext = InstanceType<typeof ElForm>;
-
-const props = defineProps(FORM_PROPS);
-const emit = defineEmits(FORM_EMITS);
-export type FormProps = typeof props;
-export type FormEmits = typeof emit;
+export const formProps = defineProps(FORM_PROPS);
+export const formEmits = defineEmits(FORM_EMITS);

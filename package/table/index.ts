@@ -1,3 +1,1 @@
-import Table from "./src/table.vue";
-
-export default Table;
+export { default as ElpTable } from "./src/table.vue";

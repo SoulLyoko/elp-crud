@@ -1,7 +1,8 @@
 import { PropType } from "vue";
-import { TableOption } from "./types";
+import { tupleArray } from "~/utils";
+import { TableColumnOption, TableOption } from "./types";
 
-export const TABLE_OPTION = {
+export const TABLE_OPTION: Partial<TableOption> = {
   addBtn: true,
   addBtnText: "新增",
   addBtnIcon: "el-icon-plus",
@@ -30,7 +31,7 @@ export const TABLE_OPTION = {
   viewTitle: "查看"
 };
 
-export const TABLE_COLUMN_OPTION = {
+export const TABLE_COLUMN_OPTION: Partial<TableColumnOption> = {
   addDisplay: true,
   addDisabled: false,
   display: true,
@@ -54,4 +55,4 @@ export const TABLE_PROPS = {
   option: { type: Object as PropType<TableOption>, default: () => ({}) }
 };
 
-export const TABLE_EMITS = ["update:modelValue", "rowDel", "rowSave", "rowUpdate", "rowReset", "refresh"];
+export const TABLE_EMITS = tupleArray("update:modelValue", "rowDel", "rowSave", "rowUpdate", "rowReset", "refresh");
