@@ -17,7 +17,7 @@
     "dev": "vite",
     "build": "vite build",
     "build:check": "vue-tsc --noEmit && vite build",
-    "build:doc": "typedoc",
+    "build:doc": "vite build && typedoc",
     "serve": "vite preview"
   },
   "dependencies": {
