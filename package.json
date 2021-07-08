@@ -1,6 +1,6 @@
 {
   "name": "elp-crud",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "keywords": [
     "elp-crud",
@@ -13,7 +13,8 @@
     "ts"
   ],
   "files": [
-    "lib"
+    "lib",
+    "packages"
   ],
   "main": "./lib/index.umd.js",
   "module": "./lib/index.es.js",
