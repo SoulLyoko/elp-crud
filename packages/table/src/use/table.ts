@@ -3,15 +3,15 @@ import { computed, nextTick, ref } from "vue";
 import { useDict } from "../../../dict/src";
 import { TableOption } from "../types";
 import { TABLE_OPTION, TABLE_COLUMN_OPTION } from "../defaults";
-import { tableProps, tableEmits } from "../types";
+import { TableProps, TableEmit } from "../types";
 
 export function useTable({
   props,
   emit,
   dict
 }: {
-  props: typeof tableProps;
-  emit: typeof tableEmits;
+  props: TableProps;
+  emit: TableEmit;
   dict: ReturnType<typeof useDict>;
 }) {
   const { getDictStorage, handleDictData } = dict;

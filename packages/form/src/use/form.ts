@@ -2,17 +2,9 @@ import { ref, computed } from "vue";
 import { cloneDeep } from "lodash";
 import { useDict } from "../../../dict";
 import { FORM_OPTION, FORM_COLUMN_OPTION } from "../defaults";
-import { formProps, formEmits } from "../types";
+import { FormProps, FormEmit } from "../types";
 
-export function useForm({
-  props,
-  emit,
-  dict
-}: {
-  props: typeof formProps;
-  emit: typeof formEmits;
-  dict: ReturnType<typeof useDict>;
-}) {
+export function useForm({ props, emit, dict }: { props: FormProps; emit: FormEmit; dict: ReturnType<typeof useDict> }) {
   const { getDictStorage, handleDictData } = dict;
 
   const elFormRef = ref();

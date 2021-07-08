@@ -18,6 +18,7 @@ import {
 } from "element-plus";
 import { DictOption, DictData } from "../../dict/src/types";
 import { FORM_EMITS, FORM_PROPS } from "./defaults";
+import { DefineEmit } from "../../utils";
 
 export type ElFormProps = InstanceType<typeof ElForm>["$props"];
 export type ElFormItemProps = InstanceType<typeof ElFormItem>["$props"];
@@ -191,9 +192,12 @@ export interface FormColumnOption extends ElFormItemProps {
   type?: FormItemType;
 }
 
-export const formProps = defineProps(FORM_PROPS);
-export const formEmits = defineEmits(FORM_EMITS);
+// export const formProps = defineProps(FORM_PROPS);
+// export const formEmits = defineEmits(FORM_EMITS);
 
-import Form from "./form.vue";
-export type FormProps = InstanceType<typeof Form>["$props"];
-export type FormEmit = InstanceType<typeof Form>["$emit"];
+export type FormProps = {
+  modelValue: Record<string, any>;
+  data: any[];
+  option: FormOption;
+};
+export type FormEmit = DefineEmit<typeof FORM_EMITS>;

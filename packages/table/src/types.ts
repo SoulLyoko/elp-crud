@@ -1,7 +1,7 @@
-import { defineProps, defineEmits } from "vue";
 import { ElTable, ElTableColumn } from "element-plus";
 import { FormColumnOption, FormOption } from "../../form/src/types";
 import { TABLE_PROPS, TABLE_EMITS } from "./defaults";
+import { DefineEmit } from "../../utils";
 
 type ElTableProps = InstanceType<typeof ElTable>["$props"];
 type ElTableColumnProps = InstanceType<typeof ElTableColumn>["$props"];
@@ -195,5 +195,12 @@ export interface TableColumnOption extends TableAndFormColumn {
   [x: string]: any;
 }
 
-export const tableProps = defineProps(TABLE_PROPS);
-export const tableEmits = defineEmits(TABLE_EMITS);
+// export const tableProps = defineProps(TABLE_PROPS);
+// export const tableEmits = defineEmits(TABLE_EMITS);
+
+export type TableProps = {
+  modelValue: Record<string, any>;
+  data: any[];
+  option: TableOption;
+};
+export type TableEmit = DefineEmit<typeof TABLE_EMITS>;

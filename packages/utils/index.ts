@@ -12,14 +12,13 @@ export function flatTree(tree: any[], childrenKey: string = "children"): any[] {
     })
     .flat(Infinity);
 }
-
-export function tupleArray<T extends string[]>(...v: T) {
-  return v;
-}
-
 /**
  * 定义Table或Form的配置
  */
 export function defineOption(option: TableOption | FormOption) {
   return option;
+}
+
+export interface DefineEmit<T> {
+  <K extends keyof T>(e: T[K], ...args: any[]): void;
 }

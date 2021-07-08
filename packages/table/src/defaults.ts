@@ -1,5 +1,4 @@
 import { PropType } from "vue";
-import { tupleArray } from "../../utils";
 import { TableColumnOption, TableOption } from "./types";
 
 export const TABLE_OPTION: Partial<TableOption> = {
@@ -55,4 +54,4 @@ export const TABLE_PROPS = {
   option: { type: Object as PropType<TableOption>, default: () => ({}) }
 };
 
-export const TABLE_EMITS = tupleArray("update:modelValue", "rowDel", "rowSave", "rowUpdate", "rowReset", "refresh");
+export const TABLE_EMITS = ["update:modelValue", "rowDel", "rowSave", "rowUpdate", "rowReset", "refresh"] as const;
