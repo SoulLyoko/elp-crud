@@ -19,6 +19,9 @@ export function defineOption(option: TableOption | FormOption) {
   return option;
 }
 
-export interface DefineEmit<T> {
-  <K extends keyof T>(e: T[K], ...args: any[]): void;
+// export interface DefineEmit<T extends string[]> {
+//   <K extends keyof T>(e: T[K], ...args: any[]): void;
+// }
+export interface DefineEmit {
+  (e: string, ...args: any[]): void;
 }

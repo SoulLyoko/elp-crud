@@ -38,9 +38,9 @@
             v-else
           >
             <!-- render: cascader label,select option,radio,radio-button,checkbox,checkbox-button -->
-            <template #default="{data}">
+            <template #default="scoped">
               <template v-if="col.type === 'cascader'">
-                {{ data.label }}
+                {{ scoped.data.label }}
               </template>
               <template v-else-if="['radio', 'checkbox'].includes(col.type || '')">
                 <component

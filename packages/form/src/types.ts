@@ -193,11 +193,10 @@ export interface FormColumnOption extends ElFormItemProps {
 }
 
 // export const formProps = defineProps(FORM_PROPS);
-// export const formEmits = defineEmits(FORM_EMITS);
+export const formEmits = defineEmits(FORM_EMITS);
 
 export type FormProps = {
   modelValue: Record<string, any>;
-  data: any[];
   option: FormOption;
 };
-export type FormEmit = DefineEmit<typeof FORM_EMITS>;
+export type FormEmit = DefineEmit;

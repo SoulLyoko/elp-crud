@@ -17,7 +17,8 @@ export const FORM_OPTION: Partial<FormOption> = {
 };
 
 export const FORM_COLUMN_OPTION: Partial<FormColumnOption> = {
-  span: 12
+  span: 12,
+  type: "input"
 };
 
 export const FORM_PROPS = {

@@ -203,4 +203,4 @@ export type TableProps = {
   data: any[];
   option: TableOption;
 };
-export type TableEmit = DefineEmit<typeof TABLE_EMITS>;
+export type TableEmit = DefineEmit;

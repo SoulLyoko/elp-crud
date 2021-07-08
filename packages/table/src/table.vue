@@ -1,6 +1,12 @@
 <template>
-  <div class="elp-table__search">
-    <elp-form v-model="searchFormData" :option="searchOption" ref="elpFormRef">
+  <div class="elp-table__search" v-if="searchOption.column && searchOption.column.length">
+    <elp-form
+      v-model="searchFormData"
+      :option="searchOption"
+      ref="elpFormRef"
+      @submit="handleSearch"
+      @reset="handleSearchReset"
+    >
       <template v-slot:[name] v-for="name in Object.keys($slots).filter(key => key.includes('Search'))">
         <slot :name="name.replace('Search', 'Form')"></slot>
       </template>
@@ -111,7 +117,9 @@ export default defineComponent({
       rowDel,
       rowSubmit,
       rowReset,
-      onRefresh
+      onRefresh,
+      handleSearch,
+      handleSearchReset
     } = useTable({
       props,
       emit,
@@ -144,7 +152,9 @@ export default defineComponent({
       searchShow,
       onSearchShow,
       getDict,
-      setDict
+      setDict,
+      handleSearch,
+      handleSearchReset
     };
   }
 });

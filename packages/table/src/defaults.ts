@@ -54,4 +54,13 @@ export const TABLE_PROPS = {
   option: { type: Object as PropType<TableOption>, default: () => ({}) }
 };
 
-export const TABLE_EMITS = ["update:modelValue", "rowDel", "rowSave", "rowUpdate", "rowReset", "refresh"] as const;
+export const TABLE_EMITS = [
+  "update:modelValue",
+  "rowDel",
+  "rowSave",
+  "rowUpdate",
+  "rowReset",
+  "refresh",
+  "search",
+  "searchReset"
+];

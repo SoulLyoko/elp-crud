@@ -122,8 +122,8 @@ export function useTable({
   }
   function rowUpdate(data: any, done: () => void) {
     emit("rowUpdate", data, () => {
-      done();
       modalVisible.value = false;
+      done();
     });
   }
   function rowSubmit(data: any, done: () => void) {
@@ -139,7 +139,12 @@ export function useTable({
   function onRefresh() {
     emit("refresh");
   }
-
+  function handleSearch(data: any, done: () => void) {
+    emit("search", data, done);
+  }
+  function handleSearchReset(data: any, done: () => void) {
+    emit("searchReset", data, done);
+  }
   return {
     tableOption,
     formOption,
@@ -153,6 +158,8 @@ export function useTable({
     rowDel,
     rowSubmit,
     rowReset,
-    onRefresh
+    onRefresh,
+    handleSearch,
+    handleSearchReset
   };
 }
