@@ -14,7 +14,7 @@
     "lib": ["esnext", "dom"],
     "paths": {
       "@/*": ["src/*"],
-      "~/*": ["package/*"]
+      "~/*": ["packages/*"]
     }
   },
   "include": [
@@ -22,9 +22,10 @@
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
-    "package/**/*.ts",
-    "package/**/*.d.ts",
-    "package/**/*.tsx",
-    "package/**/*.vue"
-  ]
+    "packages/**/*.ts",
+    "packages/**/*.d.ts",
+    "packages/**/*.tsx",
+    "packages/**/*.vue"
+  ],
+  "exclude": ["public/**/*.ts"]
 }

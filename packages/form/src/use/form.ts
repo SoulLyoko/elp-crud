@@ -1,11 +1,8 @@
 import { ref, computed } from "vue";
-import { ElForm } from "element-plus";
 import { cloneDeep } from "lodash";
 import { useDict } from "~/dict";
-import { formProps, formEmits } from "../types";
 import { FORM_OPTION, FORM_COLUMN_OPTION } from "../defaults";
-
-type ElFormContext = InstanceType<typeof ElForm>;
+import { formProps, formEmits } from "../types";
 
 export function useForm({
   props,
@@ -18,7 +15,7 @@ export function useForm({
 }) {
   const { getDictStorage, handleDictData } = dict;
 
-  const elFormRef = ref<ElFormContext>();
+  const elFormRef = ref();
   const formOption = computed(() => {
     return {
       ...FORM_OPTION,

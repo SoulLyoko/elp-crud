@@ -1,3 +1,4 @@
+import { defineProps, defineEmits } from "vue";
 import {
   ElForm,
   ElFormItem,
@@ -192,3 +193,7 @@ export interface FormColumnOption extends ElFormItemProps {
 
 export const formProps = defineProps(FORM_PROPS);
 export const formEmits = defineEmits(FORM_EMITS);
+
+import Form from "./form.vue";
+export type FormProps = InstanceType<typeof Form>["$props"];
+export type FormEmit = InstanceType<typeof Form>["$emit"];

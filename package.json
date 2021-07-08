@@ -2,6 +2,16 @@
   "name": "elp-crud",
   "version": "0.1.0",
   "license": "MIT",
+  "keywords": [
+    "elp-crud",
+    "crud",
+    "element-plus",
+    "vite",
+    "vue",
+    "vue3",
+    "typescript",
+    "ts"
+  ],
   "files": [
     "lib"
   ],
@@ -15,9 +25,11 @@
   },
   "scripts": {
     "dev": "vite",
+    "dev:lib": "vite build && vite",
     "build": "vite build",
+    "build:lib": "vite build",
     "build:check": "vue-tsc --noEmit && vite build",
-    "build:doc": "vite build && typedoc",
+    "build:doc": "typedoc",
     "serve": "vite preview"
   },
   "dependencies": {
@@ -29,17 +41,16 @@
   "devDependencies": {
     "@rollup/pluginutils": "^4.1.0",
     "@types/lodash": "^4.14.171",
-    "@types/node": "^16.0.0",
+    "@types/node": "^16.0.1",
     "@vitejs/plugin-vue": "^1.2.4",
     "@vue/compiler-sfc": "^3.1.4",
     "rollup-plugin-typescript2": "^0.30.0",
-    "sass": "^1.35.1",
+    "sass": "^1.35.2",
     "sass-loader": "^12.1.0",
     "ts-morph": "^11.0.0",
     "typedoc": "^0.21.2",
     "typescript": "^4.3.5",
     "vite": "^2.4.1",
-    "vite-dts": "^1.0.3",
     "vite-plugin-dts": "^0.5.2",
     "vue-dts-gen": "^0.2.3",
     "vue-tsc": "^0.2.0"

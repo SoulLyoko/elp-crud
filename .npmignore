@@ -1,0 +1,13 @@
+.github
+doc
+node_modules
+dist
+dist-ssr
+public
+src
+*.local
+index.html
+tsconfig.json
+typedoc.json
+vite.config.ts
+yarn.lock

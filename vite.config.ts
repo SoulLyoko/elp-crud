@@ -1,22 +1,41 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import path from "path";
+import dts from "vite-plugin-dts";
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [vue()],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "src"),
-      "~": path.resolve(__dirname, "package")
-    }
-  },
-  build: {
-    lib: {
-      entry: path.resolve(__dirname, "package/index.ts"),
-      name: "ElpCrud",
-      fileName: "index"
+export default defineConfig(({ mode }) => {
+  return {
+    plugins: [
+      vue()
+      // dts({
+      //   outputDir: "lib",
+      //   include: ["packages"]
+      // })
+    ],
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "src"),
+        "~": path.resolve(__dirname, "packages")
+      }
     },
-    outDir: "lib"
-  }
+    build: {
+      lib: {
+        entry: path.resolve(__dirname, "packages/index.ts"),
+        name: "ElpCrud",
+        fileName: "index"
+      },
+      outDir: "lib",
+      rollupOptions: {
+        // 请确保外部化那些你的库中不需要的依赖
+        external: ["vue"],
+        output: {
+          // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
+          globals: {
+            vue: "Vue"
+          }
+        }
+      }
+    }
+  };
 });

@@ -103,17 +103,18 @@
 <script lang="ts">
 import { defineProps, defineEmits, inject, defineComponent } from "vue";
 import { ElForm, ElFormItem } from "element-plus";
-import { useDict } from "~/dict";
+import { useDict, RefDictStorage } from "~/dict";
 import { useForm } from "./use/form";
 import { useRender } from "./use/render";
 import { FORM_PROPS, FORM_EMITS } from "./defaults";
 
 export default defineComponent({
+  name: "elp-form",
   components: { ElForm, ElFormItem },
   props: FORM_PROPS,
   emits: FORM_EMITS,
   setup(props, { emit }) {
-    const dictStorageInject = inject<any>("dictStorage");
+    const dictStorageInject = inject<RefDictStorage>("dictStorage");
     const dict = useDict(dictStorageInject);
     const { formItemCompnentName, formItemComponentAttrs, formItemRadioCheckbox } = useRender(dict);
     const { elFormRef, formOption, formData, handleSubmit, handleReset, submitLoading } = useForm({

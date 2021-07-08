@@ -4,8 +4,8 @@ import { FormOption } from "~/form/src/types";
 import * as components from "./components";
 
 type Option = {
-  tableOption: TableOption;
-  formOption: FormOption;
+  tableOption?: TableOption;
+  formOption?: FormOption;
 };
 
 export default {
@@ -14,8 +14,9 @@ export default {
       const component = components[key as keyof typeof components];
       app.component(component.name, component);
     });
-    app.config.globalProperties.ElpCrud = {};
-    app.config.globalProperties.ElpCrud.tableOption = options?.tableOption ?? {};
-    app.config.globalProperties.ElpCrud.formOption = options?.formOption ?? {};
+    app.config.globalProperties.$ELPCRUD = {
+      tableOption: options?.tableOption ?? {},
+      formOption: options?.formOption ?? {}
+    };
   }
 };
