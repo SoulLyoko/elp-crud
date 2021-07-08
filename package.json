@@ -1,6 +1,6 @@
 {
   "name": "elp-crud",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "keywords": [
     "elp-crud",
@@ -35,9 +35,7 @@
   },
   "dependencies": {
     "dayjs": "^1.10.6",
-    "element-plus": "1.0.2-beta.54",
-    "lodash": "^4.17.21",
-    "vue": "3.1.4"
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@rollup/pluginutils": "^4.1.0",
@@ -45,6 +43,7 @@
     "@types/node": "^16.0.1",
     "@vitejs/plugin-vue": "^1.2.4",
     "@vue/compiler-sfc": "^3.1.4",
+    "element-plus": "1.0.2-beta.54",
     "rollup-plugin-typescript2": "^0.30.0",
     "sass": "^1.35.2",
     "sass-loader": "^12.1.0",
@@ -53,6 +52,7 @@
     "typescript": "^4.3.5",
     "vite": "^2.4.1",
     "vite-plugin-dts": "^0.5.2",
+    "vue": "3.1.4",
     "vue-dts-gen": "^0.2.3",
     "vue-tsc": "^0.2.0"
   }

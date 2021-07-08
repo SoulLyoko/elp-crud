@@ -1,6 +1,6 @@
 import { App } from "vue";
-import { TableOption } from "~/table/src/types";
-import { FormOption } from "~/form/src/types";
+import { TableOption } from "./table/src/types";
+import { FormOption } from "./form/src/types";
 import * as components from "./components";
 
 type Option = {

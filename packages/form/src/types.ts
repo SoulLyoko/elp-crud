@@ -16,7 +16,7 @@ import {
   ElRate,
   ElColorPicker
 } from "element-plus";
-import { DictOption, DictData } from "~/dict/src/types";
+import { DictOption, DictData } from "../../dict/src/types";
 import { FORM_EMITS, FORM_PROPS } from "./defaults";
 
 export type ElFormProps = InstanceType<typeof ElForm>["$props"];

@@ -1,6 +1,6 @@
 import { ref, Ref } from "vue";
 import { get as ObjectGet } from "lodash";
-import { FormColumnOption } from "~/form/src/types";
+import { FormColumnOption } from "../../form/src/types";
 import { DICT_OPTION } from "./defaults";
 import { DictItem, DictOption } from "./types";
 

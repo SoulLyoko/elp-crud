@@ -1,5 +1,5 @@
 import { PropType } from "vue";
-import { tupleArray } from "~/utils";
+import { tupleArray } from "../../utils";
 import { TableColumnOption, TableOption } from "./types";
 
 export const TABLE_OPTION: Partial<TableOption> = {

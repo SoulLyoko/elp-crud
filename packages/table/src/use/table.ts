@@ -1,6 +1,6 @@
 import { cloneDeep } from "lodash";
 import { computed, nextTick, ref } from "vue";
-import { useDict } from "~/dict/src";
+import { useDict } from "../../../dict/src";
 import { TableOption } from "../types";
 import { TABLE_OPTION, TABLE_COLUMN_OPTION } from "../defaults";
 import { tableProps, tableEmits } from "../types";

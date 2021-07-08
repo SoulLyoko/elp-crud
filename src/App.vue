@@ -21,7 +21,7 @@
 
 <script lang="ts" setup>
 import { computed, ref, watch, onMounted } from "vue";
-import { defineOption } from "~/index";
+import { defineOption } from "../packages";
 
 const dictData = new Promise(resolve => {
   const data = [

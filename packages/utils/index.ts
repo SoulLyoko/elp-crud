@@ -1,5 +1,5 @@
-import { FormOption } from "~/form/src/types";
-import { TableOption } from "~/table/src/types";
+import { FormOption } from "../form/src/types";
+import { TableOption } from "../table/src/types";
 
 export function flatTree(tree: any[], childrenKey: string = "children"): any[] {
   return tree

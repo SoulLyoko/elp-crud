@@ -1,6 +1,6 @@
 import { ref, computed } from "vue";
 import { cloneDeep } from "lodash";
-import { useDict } from "~/dict";
+import { useDict } from "../../../dict";
 import { FORM_OPTION, FORM_COLUMN_OPTION } from "../defaults";
 import { formProps, formEmits } from "../types";
 

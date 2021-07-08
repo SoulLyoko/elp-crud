@@ -86,8 +86,8 @@
 
 <script lang="ts">
 import { defineProps, defineEmits, provide, defineComponent } from "vue";
-import { ElpForm } from "~/form";
-import { useDict } from "~/dict";
+import { ElpForm } from "../../form";
+import { useDict } from "../../dict";
 import { useRender, useSearch, useTable } from "./use";
 import { TABLE_PROPS, TABLE_EMITS } from "./defaults";
 

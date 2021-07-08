@@ -1,6 +1,6 @@
 import { PropType } from "vue";
-import { tupleArray } from "~/utils";
-import { TableOption } from "~/table/src/types";
+import { tupleArray } from "../../utils";
+import { TableOption } from "../../table/src/types";
 import { FormColumnOption, FormOption } from "./types";
 
 export const FORM_OPTION: Partial<FormOption> = {

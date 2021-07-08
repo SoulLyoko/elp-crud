@@ -103,7 +103,7 @@
 <script lang="ts">
 import { defineProps, defineEmits, inject, defineComponent } from "vue";
 import { ElForm, ElFormItem } from "element-plus";
-import { useDict, RefDictStorage } from "~/dict";
+import { useDict, RefDictStorage } from "../../dict";
 import { useForm } from "./use/form";
 import { useRender } from "./use/render";
 import { FORM_PROPS, FORM_EMITS } from "./defaults";

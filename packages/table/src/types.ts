@@ -1,6 +1,6 @@
 import { defineProps, defineEmits } from "vue";
 import { ElTable, ElTableColumn } from "element-plus";
-import { FormColumnOption, FormOption } from "~/form/src/types";
+import { FormColumnOption, FormOption } from "../../form/src/types";
 import { TABLE_PROPS, TABLE_EMITS } from "./defaults";
 
 type ElTableProps = InstanceType<typeof ElTable>["$props"];

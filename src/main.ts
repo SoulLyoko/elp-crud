@@ -4,7 +4,7 @@ import ElementPlus from "element-plus";
 import "element-plus/packages/theme-chalk/src/index.scss";
 import "dayjs/locale/zh-cn";
 import locale from "element-plus/lib/locale/lang/zh-cn";
-import ElpCrud from "~/index";
+import ElpCrud from "../packages";
 import App from "./App.vue";
 
 const app = createApp(App);

@@ -1,5 +1,5 @@
 import { ref, computed, Ref } from "vue";
-import { FormOption } from "~/form/src/types";
+import { FormOption } from "../../../form/src/types";
 import { TableOption } from "../types";
 
 export function useSearch(tableOption: Ref<TableOption>) {

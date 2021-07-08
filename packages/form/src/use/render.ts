@@ -1,4 +1,4 @@
-import { useDict } from "~/dict";
+import { useDict } from "../../../dict";
 import { FormColumnOption } from "../types";
 
 export function useRender(dict: ReturnType<typeof useDict>) {
