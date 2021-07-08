@@ -1,4 +1,4 @@
-import { flatTree } from "elp-crud/utils";
+import { flatTree } from "../../utils";
 import { DictItem } from "./types";
 
 export function getDictLabel(value: DictItem["value"], options: DictItem[], join = ",") {
