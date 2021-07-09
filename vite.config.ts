@@ -1,18 +1,11 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import path from "path";
-import dts from "vite-plugin-dts";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   return {
-    plugins: [
-      vue()
-      // dts({
-      //   outputDir: "lib",
-      //   include: ["packages"]
-      // })
-    ],
+    plugins: [vue()],
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "src"),

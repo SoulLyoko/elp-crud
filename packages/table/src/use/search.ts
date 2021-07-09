@@ -1,9 +1,17 @@
+import { cloneDeep } from "lodash";
 import { ref, computed, Ref } from "vue";
 import { FormOption } from "../../../form/src/types";
-import { TableOption } from "../types";
+import { TableProps, TableEmit, TableOption } from "../types";
 
-export function useSearch(tableOption: Ref<TableOption>) {
-  const searchFormData = ref({});
+export function useSearch({
+  props,
+  emit,
+  tableOption
+}: {
+  props: TableProps;
+  emit: TableEmit;
+  tableOption: Ref<TableOption>;
+}) {
   const searchOption = computed(() => {
     return {
       size: tableOption.value.size,
@@ -32,15 +40,37 @@ export function useSearch(tableOption: Ref<TableOption>) {
     } as FormOption;
   });
 
+  const defaultSearchFormData = cloneDeep({ ...props.search });
+  const searchFormData = computed<any>({
+    get() {
+      return props.search;
+    },
+    set(val) {
+      emit("update:search", val);
+    }
+  });
+
+  searchFormData.value = defaultSearchFormData;
+
   const searchShow = ref(tableOption.value.searchShow);
   const onSearchShow = () => {
     searchShow.value = !searchShow.value;
   };
 
+  function handleSearch(data: any, done: () => void) {
+    emit("search", data, done);
+  }
+  function handleSearchReset(data: any, done: () => void) {
+    searchFormData.value = {};
+    emit("searchReset", data, done);
+  }
+
   return {
     searchFormData,
     searchOption,
     searchShow,
-    onSearchShow
+    onSearchShow,
+    handleSearch,
+    handleSearchReset
   };
 }

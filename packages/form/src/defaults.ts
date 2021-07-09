@@ -1,4 +1,5 @@
 import { PropType } from "vue";
+import { tupleArray } from "../../utils";
 import { TableOption } from "../../table/src/types";
 import { FormColumnOption, FormOption } from "./types";
 
@@ -26,4 +27,4 @@ export const FORM_PROPS = {
   option: { type: Object as PropType<FormOption & TableOption>, default: () => ({}) }
 };
 
-export const FORM_EMITS = ["update:modelValue", "submit", "reset"];
+export const FORM_EMITS = tupleArray("update:modelValue", "submit", "reset");

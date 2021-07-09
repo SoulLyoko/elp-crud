@@ -9,6 +9,8 @@ export function useRender(dict: ReturnType<typeof useDict>) {
       case "radio":
       case "checkbox":
         return "el-" + col.type + "-group";
+      case "password":
+        return "el-input";
       case "textarea":
         return "el-input";
       case "number":
@@ -28,6 +30,8 @@ export function useRender(dict: ReturnType<typeof useDict>) {
       case "cascader":
         attrs.options = getDictStorage(col.prop);
         break;
+      case "password":
+        attrs.type = col.type;
       case "textarea":
         attrs.type = col.type;
         break;
@@ -38,7 +42,7 @@ export function useRender(dict: ReturnType<typeof useDict>) {
       case "time":
       case "date":
       case "datetime":
-        attrs.type = attrs.type || col.type;
+        attrs.type = col.type;
         if (attrs.format || col.format) {
           attrs.format = attrs.format || col.format;
         }

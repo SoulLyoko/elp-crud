@@ -1,4 +1,6 @@
 {
+  "name": "ElpCrud",
   "entryPoints": ["packages/index.ts"],
-  "out": "doc"
+  "out": "docs/typedoc",
+  "excludeExternals": true
 }

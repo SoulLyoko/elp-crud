@@ -1,12 +1,6 @@
 <template>
-  <div class="elp-table__search" v-if="searchOption.column && searchOption.column.length">
-    <elp-form
-      v-model="searchFormData"
-      :option="searchOption"
-      ref="elpFormRef"
-      @submit="handleSearch"
-      @reset="handleSearchReset"
-    >
+  <div class="elp-table__search" v-if="searchShow && searchOption.column && searchOption.column.length">
+    <elp-form v-model="searchFormData" :option="searchOption" @submit="handleSearch" @reset="handleSearchReset">
       <template v-slot:[name] v-for="name in Object.keys($slots).filter(key => key.includes('Search'))">
         <slot :name="name.replace('Search', 'Form')"></slot>
       </template>
@@ -46,7 +40,7 @@
     </div>
   </div>
 
-  <el-table v-bind="tableOption" :data="data" ref="ElTableRef">
+  <el-table v-bind="tableOption" :data="data" ref="elTableRef">
     <el-table-column type="selection" fixed="left" v-if="tableOption.selection"></el-table-column>
     <el-table-column
       type="index"
@@ -56,7 +50,7 @@
       v-if="tableOption.index"
     ></el-table-column>
 
-    <el-table-column v-for="col in tableOption.column" :key="col.prop" v-bind="col" ref="ElTableColumnRef">
+    <el-table-column v-for="col in tableOption.column" :key="col.prop" v-bind="col" ref="elTableColumnRef">
       <template #default="{ row }">
         <template v-if="$slots[col.prop]">
           <slot :name="col.prop"></slot>
@@ -82,7 +76,7 @@
   </el-table>
 
   <component :title="modalTitle" :is="'el-' + tableOption.modalType" v-model="modalVisible">
-    <elp-form ref="elpFormRef" v-model="formData" :option="formOption" @submit="rowSubmit" @reset="rowReset">
+    <elp-form v-model="formData" :option="formOption" @submit="rowSubmit" @reset="rowReset">
       <template v-slot:[name] v-for="name in Object.keys($slots)">
         <slot :name="name"></slot>
       </template>
@@ -91,106 +85,53 @@
 </template>
 
 <script lang="ts">
-import { defineProps, defineEmits, provide, defineComponent } from "vue";
+export default {
+  name: "elp-table"
+};
+</script>
+<script lang="ts" setup>
+import { defineProps, defineEmits, provide, ref } from "vue";
 import { ElpForm } from "../../form";
 import { useDict } from "../../dict";
 import { useRender, useSearch, useTable } from "./use";
 import { TABLE_PROPS, TABLE_EMITS } from "./defaults";
 
-export default defineComponent({
-  name: "elp-table",
-  component: { ElpForm },
-  props: TABLE_PROPS,
-  emits: TABLE_EMITS,
-  setup(props, { emit }) {
-    const dict = useDict();
-    const { renderIndex, renderColumn } = useRender(dict);
-    const {
-      tableOption,
-      formOption,
-      formData,
-      modalTitle,
-      modalVisible,
-      rowAdd,
-      rowEdit,
-      rowView,
-      rowDel,
-      rowSubmit,
-      rowReset,
-      onRefresh,
-      handleSearch,
-      handleSearchReset
-    } = useTable({
-      props,
-      emit,
-      dict
-    });
-    const { searchOption, searchFormData, searchShow, onSearchShow } = useSearch(tableOption);
+const elTableRef = ref();
+const elTableColumnRef = ref();
 
-    const { dictStorage, getDictStorage, setDictStorage } = dict;
-    provide("dictStorage", dictStorage);
-    const getDict = getDictStorage;
-    const setDict = setDictStorage;
+const props = defineProps(TABLE_PROPS);
+const emit = defineEmits(TABLE_EMITS);
 
-    return {
-      renderIndex,
-      renderColumn,
-      tableOption,
-      formOption,
-      formData,
-      modalTitle,
-      modalVisible,
-      rowAdd,
-      rowEdit,
-      rowView,
-      rowDel,
-      rowSubmit,
-      rowReset,
-      onRefresh,
-      searchOption,
-      searchFormData,
-      searchShow,
-      onSearchShow,
-      getDict,
-      setDict,
-      handleSearch,
-      handleSearchReset
-    };
-  }
+const dict = useDict();
+const { renderIndex, renderColumn } = useRender(dict);
+const {
+  tableOption,
+  formOption,
+  formData,
+  modalTitle,
+  modalVisible,
+  rowAdd,
+  rowEdit,
+  rowView,
+  rowDel,
+  rowSubmit,
+  rowReset,
+  onRefresh
+} = useTable({
+  props,
+  emit,
+  dict
+});
+const { searchOption, searchFormData, searchShow, onSearchShow, handleSearch, handleSearchReset } = useSearch({
+  props,
+  emit,
+  tableOption
 });
 
-/**
- * setup sugar
- */
-// const props = defineProps(TABLE_PROPS);
-// const emit = defineEmits(TABLE_EMITS);
-
-// const dict = useDict();
-// const { renderIndex, renderColumn } = useRender(dict);
-// const {
-//   tableOption,
-//   formOption,
-//   formData,
-//   modalTitle,
-//   modalVisible,
-//   rowAdd,
-//   rowEdit,
-//   rowView,
-//   rowDel,
-//   rowSubmit,
-//   rowReset,
-//   onRefresh
-// } = useTable({
-//   props,
-//   emit,
-//   dict
-// });
-// const { searchOption, searchFormData, searchShow, onSearchShow } = useSearch(tableOption);
-
-// const { dictStorage, getDictStorage, setDictStorage } = dict;
-// provide("dictStorage", dictStorage);
-// const setDict = setDictStorage;
-// const getDict = getDictStorage;
+const { dictStorage, getDictStorage, setDictStorage } = dict;
+provide("dictStorage", dictStorage);
+const setDict = setDictStorage;
+const getDict = getDictStorage;
 </script>
 
 <style lang="scss">

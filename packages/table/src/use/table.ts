@@ -20,7 +20,7 @@ export function useTable({
     return {
       ...TABLE_OPTION,
       ...props.option,
-      column: props.option.column
+      column: props.option?.column
         .filter(column => {
           const col = { ...TABLE_COLUMN_OPTION, ...column };
           return !col.hide;
@@ -39,7 +39,7 @@ export function useTable({
     const option = {
       ...TABLE_OPTION,
       ...props.option,
-      column: props.option.column
+      column: props.option?.column
         .filter(column => {
           const col = { ...TABLE_COLUMN_OPTION, ...column };
           const displayFlags = [];
@@ -139,12 +139,6 @@ export function useTable({
   function onRefresh() {
     emit("refresh");
   }
-  function handleSearch(data: any, done: () => void) {
-    emit("search", data, done);
-  }
-  function handleSearchReset(data: any, done: () => void) {
-    emit("searchReset", data, done);
-  }
   return {
     tableOption,
     formOption,
@@ -158,8 +152,6 @@ export function useTable({
     rowDel,
     rowSubmit,
     rowReset,
-    onRefresh,
-    handleSearch,
-    handleSearchReset
+    onRefresh
   };
 }

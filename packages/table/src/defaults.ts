@@ -1,4 +1,5 @@
 import { PropType } from "vue";
+import { tupleArray } from "../../utils";
 import { TableColumnOption, TableOption } from "./types";
 
 export const TABLE_OPTION: Partial<TableOption> = {
@@ -13,14 +14,14 @@ export const TABLE_OPTION: Partial<TableOption> = {
   editBtnText: "编辑",
   editBtnIcon: "el-icon-edit",
   editTitle: "编辑",
-  index: true,
+  index: false,
   indexLabel: "#",
   menu: true,
   menuWidth: "260px",
   menuBar: true,
   modalType: "dialog",
   refreshBtn: true,
-  selection: true,
+  selection: false,
   searchShow: true,
   searchBtn: true,
   size: "small",
@@ -50,17 +51,19 @@ export const DATE_FORMAT = {
 
 export const TABLE_PROPS = {
   modelValue: { type: Object, default: () => ({}) },
+  search: { type: Object, default: () => ({}) },
   data: { type: Array, default: () => [] },
   option: { type: Object as PropType<TableOption>, default: () => ({}) }
 };
 
-export const TABLE_EMITS = [
+export const TABLE_EMITS = tupleArray(
   "update:modelValue",
+  "update:search",
+  "refresh",
   "rowDel",
   "rowSave",
   "rowUpdate",
   "rowReset",
-  "refresh",
   "search",
   "searchReset"
-];
+);

@@ -8,6 +8,7 @@
       @rowSave="handleSave"
       @rowUpdate="handleUpdate"
       @rowReset="handleReset"
+      @search="handleSearch"
     >
       <template #slot>
         <span>自定义列</span>
@@ -117,8 +118,8 @@ const tableOption = computed(() => {
         dictData
         // editDisabled: true
       },
-      { label: "输入框", prop: "input", type: "input", search: true },
-      { label: "密码框", prop: "password", type: "input" },
+      { label: "输入框", prop: "input", search: true },
+      { label: "密码框", prop: "password", type: "password" },
       { label: "文本域", prop: "textarea", type: "textarea" },
       { label: "计数器", prop: "number", type: "number" },
       { label: "选择器", prop: "select", type: "select", dictData },
@@ -145,16 +146,19 @@ const tableOption = computed(() => {
 const handleDel = (row: any) => {
   console.log("🚀 ~ file: App.vue ~ line 17 ~ handleDel ~ row", row);
 };
-const handleSave = (row: any, done: () => any) => {
+const handleSave = (row: any, done: () => void) => {
   console.log("🚀 ~ file: App.vue ~ line 139 ~ handleSave ~ row", row);
   done();
 };
-const handleUpdate = (row: any, done: () => any) => {
+const handleUpdate = (row: any, done: () => void) => {
   console.log("🚀 ~ file: App.vue ~ line 143 ~ handleUpdate ~ row", row);
   done();
 };
 const handleReset = () => {
   // formData.value = { checkbox: [] };
+};
+const handleSearch = (done: () => void) => {
+  done();
 };
 </script>
 

@@ -1,5 +1,6 @@
 import { FormOption } from "../form/src/types";
 import { TableOption } from "../table/src/types";
+import { DefineComponent } from "vue";
 
 export function flatTree(tree: any[], childrenKey: string = "children"): any[] {
   return tree
@@ -19,9 +20,12 @@ export function defineOption(option: TableOption | FormOption) {
   return option;
 }
 
-// export interface DefineEmit<T extends string[]> {
-//   <K extends keyof T>(e: T[K], ...args: any[]): void;
-// }
-export interface DefineEmit {
-  (e: string, ...args: any[]): void;
+export function tupleArray<T extends string[]>(...v: T) {
+  return v;
 }
+
+export type DefineProps<P> = InstanceType<DefineComponent<P>>["$props"];
+
+export type DefineEmits<E extends string[]> = InstanceType<DefineComponent<{}, {}, {}, {}, {}, {}, {}, E>>["$emit"];
+
+export type ComponentInstance<P, E extends string[]> = InstanceType<DefineComponent<P, {}, {}, {}, {}, {}, {}, E>>;

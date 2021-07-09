@@ -101,63 +101,29 @@
 </template>
 
 <script lang="ts">
-import { defineProps, defineEmits, inject, defineComponent } from "vue";
+export default {
+  name: "elp-form"
+};
+</script>
+<script lang="ts" setup>
+import { defineProps, defineEmits, inject } from "vue";
 import { ElForm, ElFormItem } from "element-plus";
-import { useDict, RefDictStorage } from "../../dict";
+import { useDict } from "../../dict";
 import { useForm } from "./use/form";
 import { useRender } from "./use/render";
 import { FORM_PROPS, FORM_EMITS } from "./defaults";
 
-export default defineComponent({
-  name: "elp-form",
-  components: { ElForm, ElFormItem },
-  props: FORM_PROPS,
-  emits: FORM_EMITS,
-  setup(props, { emit }) {
-    const dictStorageInject = inject<RefDictStorage>("dictStorage");
-    const dict = useDict(dictStorageInject);
-    const { formItemCompnentName, formItemComponentAttrs, formItemRadioCheckbox } = useRender(dict);
-    const { elFormRef, formOption, formData, handleSubmit, handleReset, submitLoading } = useForm({
-      props,
-      emit,
-      dict
-    });
+const props = defineProps(FORM_PROPS);
+const emit = defineEmits(FORM_EMITS);
 
-    const { getDictStorage, setDictStorage } = dict;
-    const getDict = getDictStorage;
-    const setDict = setDictStorage;
+const dictStorageInject = inject<any>("dictStorage");
+const dict = useDict(dictStorageInject);
+const { formItemCompnentName, formItemComponentAttrs, formItemRadioCheckbox } = useRender(dict);
+const { elFormRef, formOption, formData, handleSubmit, handleReset, submitLoading } = useForm({ props, emit, dict });
 
-    return {
-      formItemCompnentName,
-      formItemComponentAttrs,
-      formItemRadioCheckbox,
-      elFormRef,
-      formOption,
-      formData,
-      handleSubmit,
-      handleReset,
-      submitLoading,
-      getDictStorage,
-      getDict,
-      setDict
-    };
-  }
-});
-
-/**
- * setup sugar
- */
-// const props = defineProps(FORM_PROPS);
-// const emit = defineEmits(FORM_EMITS);
-
-// const dictStorageInject = inject<any>("dictStorage");
-// const dict = useDict(dictStorageInject);
-// const { formItemCompnentName, formItemComponentAttrs, formItemRadioCheckbox } = useRender(dict);
-// const { elFormRef, formOption, formData, handleSubmit, handleReset, submitLoading } = useForm({ props, emit, dict });
-
-// const { getDictStorage, setDictStorage } = dict;
-// const getDict = getDictStorage;
-// const setDict = setDictStorage;
+const { getDictStorage, setDictStorage } = dict;
+const getDict = getDictStorage;
+const setDict = setDictStorage;
 </script>
 
 <style lang="scss">

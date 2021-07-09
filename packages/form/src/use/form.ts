@@ -12,7 +12,7 @@ export function useForm({ props, emit, dict }: { props: FormProps; emit: FormEmi
     return {
       ...FORM_OPTION,
       ...props.option,
-      column: props.option.column.map(column => {
+      column: props.option?.column.map(column => {
         if (column.dictData && !getDictStorage(column.prop)) {
           handleDictData(column);
         }

@@ -21,8 +21,8 @@ export interface DictOption {
   value?: string;
   children?: string;
   /**
-   * - 描述:请求返回的数据格式
-   * - 默认:res.data
+   * - 说明:请求返回的数据格式
+   * - 默认值:res.data
    */
   res?: string;
 }
