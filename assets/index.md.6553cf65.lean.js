@@ -1,0 +1,1 @@
+import{o as n,c as a,a as s}from"./app.4df48b0e.js";const t='{"title":"Elp Crud","description":"","frontmatter":{},"headers":[{"level":2,"title":"安装","slug":"安装"},{"level":2,"title":"使用","slug":"使用"}],"relativePath":"index.md","lastUpdated":1626169790783}',p={},o=s('',10);p.render=function(s,t,p,e,c,u){return n(),a("div",null,[o])};export default p;export{t as __pageData};
