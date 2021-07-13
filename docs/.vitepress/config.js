@@ -1,5 +1,5 @@
 module.exports = {
-  base: "/elp-crud/",
+  base: "/elp-crud",
   lang: "zh-CN",
   title: "ElpCrud",
   description: "A Crud Lib Build On ElementPlus Using Vite + Vue3 + Typescript",
@@ -12,7 +12,17 @@ module.exports = {
         { text: "类型定义", link: "/typedoc/modules" },
         {
           text: "表格",
-          children: [{ text: "基础", link: "/table/basic" }]
+          children: [
+            { text: "TableOption", link: "/typedoc/interfaces/tableoption" },
+            { text: "基础", link: "/table/basic" }
+          ]
+        },
+        {
+          text: "表单",
+          children: [
+            { text: "FormOption", link: "/typedoc/interfaces/formoption" },
+            { text: "基础", link: "/form/basic" }
+          ]
         }
       ]
     }

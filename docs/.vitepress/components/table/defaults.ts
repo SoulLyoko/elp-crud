@@ -1,5 +1,5 @@
 // defaults.ts
-import { defineOption } from "../../../../"; //ts环境下可以从elp-crud导入defineOption使用，来获取类型提示
+import { defineOption } from "../../../../packages"; //ts环境下可以从elp-crud导入defineOption使用，来获取类型提示
 
 export const defaultOption = defineOption({
   column: [

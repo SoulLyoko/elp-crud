@@ -16,8 +16,8 @@
 
 | 参数           | 说明             | 类型                                                | 默认值 |
 | -------------- | ---------------- | --------------------------------------------------- | ------ |
-| v-model        | 绑定表单数据     | object                                              | -      |
-| v-model:search | 绑定搜索表单数据 | object                                              | -      |
+| v-model        | 表单绑定数据     | object                                              | -      |
+| v-model:search | 搜索表单绑定数据 | object                                              | -      |
 | data           | 表格数据         | array                                               | -      |
 | option         | 表格配置         | [TableOption](../typedoc/interfaces/tableoption.md) | -      |
 

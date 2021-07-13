@@ -6,7 +6,7 @@
           <!-- label -->
           <template #label>
             <template v-if="$slots[col.prop + 'Label']">
-              <slot :name="col.prop + 'Label'"></slot>
+              <slot :name="col.prop + 'Label'" :row="formData" :col="col" :dict="getDictStorage(col.prop)"></slot>
             </template>
             <template v-else>
               <span>{{ col.label }}</span>
@@ -14,7 +14,7 @@
           </template>
           <!-- slot -->
           <template v-if="$slots[col.prop + 'Form']">
-            <slot :name="col.prop + 'Form'"></slot>
+            <slot :name="col.prop + 'Form'" :row="formData" :col="col" :dict="getDictStorage(col.prop)"></slot>
           </template>
           <!-- custom component -->
           <template v-else-if="col.component">

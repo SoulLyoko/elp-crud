@@ -1,7 +1,8 @@
 // @ts-nocheck
-import Container from "./container/index.vue";
+import DemoContainer from "./demo-container/index.vue";
 import TableBasic from "./table/basic/index.vue";
+import FormBasic from "./form/basic/index.vue";
 
-const components = [Container, TableBasic];
+const components = [DemoContainer, TableBasic, FormBasic];
 
 export default components;

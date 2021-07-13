@@ -29,7 +29,7 @@
 
 #### Defined in
 
-[packages/dict/src/types.ts:22](https://github.com/SoulLyoko/elp-crud/blob/5f79ebc/packages/dict/src/types.ts#L22)
+[packages/dict/src/types.ts:22](https://github.com/SoulLyoko/elp-crud/blob/dcd3593/packages/dict/src/types.ts#L22)
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 #### Defined in
 
-[packages/dict/src/types.ts:20](https://github.com/SoulLyoko/elp-crud/blob/5f79ebc/packages/dict/src/types.ts#L20)
+[packages/dict/src/types.ts:20](https://github.com/SoulLyoko/elp-crud/blob/dcd3593/packages/dict/src/types.ts#L20)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-[packages/dict/src/types.ts:27](https://github.com/SoulLyoko/elp-crud/blob/5f79ebc/packages/dict/src/types.ts#L27)
+[packages/dict/src/types.ts:27](https://github.com/SoulLyoko/elp-crud/blob/dcd3593/packages/dict/src/types.ts#L27)
 
 ___
 
@@ -62,4 +62,4 @@ ___
 
 #### Defined in
 
-[packages/dict/src/types.ts:21](https://github.com/SoulLyoko/elp-crud/blob/5f79ebc/packages/dict/src/types.ts#L21)
+[packages/dict/src/types.ts:21](https://github.com/SoulLyoko/elp-crud/blob/dcd3593/packages/dict/src/types.ts#L21)

@@ -4,9 +4,9 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
-  name: "container",
+  name: "demo-container",
   data() {
     return {};
   }

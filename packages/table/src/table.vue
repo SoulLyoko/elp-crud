@@ -1,8 +1,13 @@
 <template>
   <div class="elp-table__search" v-if="searchShow && searchOption.column && searchOption.column.length">
     <elp-form v-model="searchFormData" :option="searchOption" @submit="handleSearch" @reset="handleSearchReset">
-      <template v-slot:[name] v-for="name in Object.keys($slots).filter(key => key.includes('Search'))">
-        <slot :name="name.replace('Search', 'Form')"></slot>
+      <template
+        v-slot:[name]="{ row, col }"
+        v-for="name in Object.keys($slots)
+          .filter(key => key.includes('Search'))
+          .map(key => key.replace('Search', 'Form'))"
+      >
+        <slot :name="name.replace('Form', 'Search')" :row="row" :col="col" :dict="getDictStorage(col.prop)"></slot>
       </template>
     </elp-form>
   </div>
@@ -53,7 +58,7 @@
     <el-table-column v-for="col in tableOption.column" :key="col.prop" v-bind="col" ref="elTableColumnRef">
       <template #default="{ row }">
         <template v-if="$slots[col.prop]">
-          <slot :name="col.prop"></slot>
+          <slot :name="col.prop" :row="row" :col="col" :dict="getDictStorage(col.prop)"></slot>
         </template>
         <template v-else>
           <span>{{ renderColumn(row, col) }}</span>

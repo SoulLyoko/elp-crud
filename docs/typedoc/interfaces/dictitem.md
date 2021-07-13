@@ -22,7 +22,7 @@
 
 #### Defined in
 
-[packages/dict/src/types.ts:4](https://github.com/SoulLyoko/elp-crud/blob/5f79ebc/packages/dict/src/types.ts#L4)
+[packages/dict/src/types.ts:4](https://github.com/SoulLyoko/elp-crud/blob/dcd3593/packages/dict/src/types.ts#L4)
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 #### Defined in
 
-[packages/dict/src/types.ts:2](https://github.com/SoulLyoko/elp-crud/blob/5f79ebc/packages/dict/src/types.ts#L2)
+[packages/dict/src/types.ts:2](https://github.com/SoulLyoko/elp-crud/blob/dcd3593/packages/dict/src/types.ts#L2)
 
 ___
 
@@ -42,4 +42,4 @@ ___
 
 #### Defined in
 
-[packages/dict/src/types.ts:3](https://github.com/SoulLyoko/elp-crud/blob/5f79ebc/packages/dict/src/types.ts#L3)
+[packages/dict/src/types.ts:3](https://github.com/SoulLyoko/elp-crud/blob/dcd3593/packages/dict/src/types.ts#L3)
